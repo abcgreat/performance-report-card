@@ -1,0 +1,27 @@
+.Totals {
+  color: #dadee0;
+  font-size: 12px;
+  text-align: end;
+  width: 100%;
+
+  &-Impressions {
+    font-size: 16px;
+    font-weight: 700;
+    color: #eb964b;
+    cursor: pointer;
+  }
+
+  &-Conversions {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3789be;
+    cursor: pointer;
+  }
+
+  &-Revenue {
+    font-size: 24px;
+    font-weight: 900;
+    color: #28ae61;
+    cursor: pointer;
+  }
+}

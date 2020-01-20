@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Performance Report Card
 
-In the project directory, you can run:
+Follow instructions below to install, run, and test:
 
-### `yarn start`
+### `install`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Download Gitbash from https://git-scm.com/download/win
+Install the app and open for git/npm/yarn commands.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Download NodeJs from https://nodejs.org/en/download/
 
-### `yarn test`
+Once you downloaded the file, install NodeJs.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open Gitbash,
 
-### `yarn build`
+Check versions for node and npm <br />
+node -v <br />
+npm -v <br />
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `clone`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+clone this git repository, performance-report-card.
+cd performance-report-card
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `install yarn`
 
-### `yarn eject`
+npm install yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `install modules`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install --save enzyme enzyme-adapter-react-16
+yarn add typescript
+yarn add bizcharts
+yarn add node-sass
+yarn add --dev jest-canvas-mock
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `test`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+control-C to abort on Windows
+npm test
 
-## Learn More
+### `run`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+control-C to abort on Windows
+npm start
+A window will pop up or go to: http://localhost:3000/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Click on name, impressions, conversions, and revenue on the bottom right corner to sort.
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

@@ -69,29 +69,8 @@ class Card extends React.Component<CardProps> {
     };
 
     private SortByTotal = (sortField?: string): void => {
-        if (sortField !== undefined) {
-            switch (sortField) {
-                case 'impressions':
-                    if (this.props.onSortClick !== undefined) {
-                        this.props.onSortClick('impressions');
-                    }
-                    break;
-
-                case 'conversions':
-                    if (this.props.onSortClick !== undefined) {
-                        this.props.onSortClick('conversions');
-                    }
-                    break;
-
-                case 'revenue':
-                    if (this.props.onSortClick !== undefined) {
-                        this.props.onSortClick('revenue');
-                    }
-                    break;
-
-                default:
-                    break;
-            }
+        if (sortField !== undefined && this.props.onSortClick !== undefined) {
+            this.props.onSortClick(sortField);
         }
     }
 }

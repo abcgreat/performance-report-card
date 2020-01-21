@@ -9,7 +9,8 @@ export interface DashboardProps {
 }
 
 export interface DashboardState {
-    userLogs: UserLogs[]
+    userLogs: UserLogs[],
+    sortedBy?: string,
 }
 
 export interface UserLogs {
@@ -44,26 +45,42 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
     render() {
         return (
             <div className={"Dashboard"}>
-                {this.state.userLogs.map((usersDetail, index) => {
-                        return (
-                            <Card
-                                key={index}
-                                user_id={usersDetail.user_id}
-                                avatar={usersDetail.avatar}
-                                name={usersDetail.name}
-                                occupation={usersDetail.occupation}
-                                impressions={usersDetail.impressions}
-                                conversions={usersDetail.conversions}
-                                revenue={usersDetail.revenue}
-                                trafficDates={usersDetail.trafficDates}
-                                dataRange={usersDetail.dataRange}
-                                onSortClick={this.SortByFieldName}
-                            />
-                        )
-                    }
-                )}
+                {this.optionalMessage()}
+
+                <div className={"Dashboard-Cards"}>
+                    {this.state.userLogs.map((usersDetail, index) => {
+                            return (
+                                <Card
+                                    key={index}
+                                    user_id={usersDetail.user_id}
+                                    avatar={usersDetail.avatar}
+                                    name={usersDetail.name}
+                                    occupation={usersDetail.occupation}
+                                    impressions={usersDetail.impressions}
+                                    conversions={usersDetail.conversions}
+                                    revenue={usersDetail.revenue}
+                                    trafficDates={usersDetail.trafficDates}
+                                    dataRange={usersDetail.dataRange}
+                                    onSortClick={this.SortByFieldName}
+                                />
+                            )
+                        }
+                    )}
+                </div>
             </div>
         );
+    }
+
+    private optionalMessage() {
+        if (this.state.sortedBy !== undefined) {
+            return (
+                <div className={"Dashboard-Message"}>
+                    Sorted by: {this.state.sortedBy}
+                </div>
+            )
+        }
+
+        return null;
     }
 
     private getUserLogData(): DashboardState {
@@ -149,6 +166,10 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
 
     private SortByFieldName = (sortField?: string): void => {
         if (sortField !== undefined) {
+            this.setState(
+                {sortedBy: sortField}
+            )
+
             switch (sortField) {
                 case 'name':
                     this.setState({

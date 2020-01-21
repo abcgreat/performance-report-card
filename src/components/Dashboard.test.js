@@ -7,6 +7,8 @@ describe('Dashboard', () => {
     it('should render cards', () => {
         const wrapped = shallow(<Dashboard/>);
         expect(wrapped.exists(Card)).toEqual(true);
+
+        expect(wrapped.exists('.Dashboard-Message')).toEqual(false);
     });
 
     it('should render list of cards', () => {
@@ -29,6 +31,7 @@ describe('Dashboard', () => {
         const retriedClickableName = retriedFirstCard.find('.Card-Profile-Detail-Name');
 
         expect(retriedClickableName.contains('Aaron E. Poynton')).toEqual(true);
+        expect(wrapped.exists('.Dashboard-Message')).toEqual(true);
     });
 
     it('should sort by impressions', () => {
@@ -44,6 +47,7 @@ describe('Dashboard', () => {
         const retriedClickableImpressions = retriedFirstCard.find('.Totals-Impressions');
 
         expect(retriedClickableImpressions.contains(838)).toEqual(true);
+        expect(wrapped.exists('.Dashboard-Message')).toEqual(true);
     });
 
     it('should sort by conversions', () => {
@@ -59,6 +63,7 @@ describe('Dashboard', () => {
         const retriedClickableConversions = retriedFirstCard.find('.Totals-Conversions');
 
         expect(retriedClickableConversions.contains(255)).toEqual(true);
+        expect(wrapped.exists('.Dashboard-Message')).toEqual(true);
     });
 
     it('should sort by revenue', () => {
@@ -74,5 +79,6 @@ describe('Dashboard', () => {
         const retriedClickableRevenue = retriedFirstCard.find('.Totals-Revenue');
 
         expect(retriedClickableRevenue.contains('12,684')).toEqual(true);
+        expect(wrapped.exists('.Dashboard-Message')).toEqual(true);
     });
 });

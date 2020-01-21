@@ -1,7 +1,14 @@
 .Dashboard {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 8px;
     background-color: #7f8c8d;
+
+    &-Message {
+        color: #ffffff;
+    }
+
+    &-Cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 8px;
+    }
 }

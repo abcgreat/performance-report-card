@@ -13,13 +13,13 @@ class Totals extends React.Component<TotalsProps> {
     render() {
         return (
             <div className={"Totals"}>
-                <div onClick={this.onImpressionsClick} className={"Totals-Impressions"}>
+                <div onClick={this.onImpressionsClick} className={"Totals-Impressions"} title={'Impressions'}>
                     {this.props.impressions}
                 </div>
                 <span className={"Label"}>
                     impressions
                 </span>
-                <div onClick={this.onConversionsClick} className={"Totals-Conversions"}>
+                <div onClick={this.onConversionsClick} className={"Totals-Conversions"} title={'Conversions'}>
                     {this.props.conversions}
                 </div>
                 <span className={"Label"}>

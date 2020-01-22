@@ -33,11 +33,11 @@ class Card extends React.Component<CardProps> {
                     />
 
                     <div className={"Card-Profile-Detail"}>
-                        <div onClick={this.onNameClick} className={"Card-Profile-Detail-Name"}>
+                        <div onClick={this.onNameClick} className={"Card-Profile-Detail-Name"} title={'Name'}>
                             {this.props.name}
                         </div>
 
-                        <div className={"Card-Profile-Detail-Occupation"}>
+                        <div className={"Card-Profile-Detail-Occupation"} title={'Occupation'}>
                             {this.props.occupation}
                         </div>
                     </div>

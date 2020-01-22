@@ -18,7 +18,7 @@ class Statistics extends React.Component<StatisticsProps> {
         const userStats = this.props.userStats;
 
         return (
-            <div className={'Statistics'}>
+            <div className={'Statistics'} title={`Traffic: ${this.props.dataRange}`}>
                 <Chart width={160} height={48} data={userStats} padding={0}>
                     <Geom
                         type="line"

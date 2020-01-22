@@ -17,17 +17,33 @@
       &-Name {
         border: 2px solid rgba(0, 0, 0, .95);
       }
+      &-Name-Clicked {
+        border: 2px solid rgba(0, 0, 0, .95);
+        background: rgba(248, 226, 128, .95);
+      }
 
       &-Impressions {
         border: 2px solid rgba(235, 150, 75, .95);
+      }
+      &-Impressions-Clicked  {
+        border: 2px solid rgba(235, 150, 75, .95);
+        background: rgba(248, 226, 128, .95);
       }
 
       &-Conversions {
         border: 2px solid rgba(55, 137, 190, .95);
       }
+      &-Conversions-Clicked  {
+        border: 2px solid rgba(55, 137, 190, .95);
+        background: rgba(248, 226, 128, .95);
+      }
 
       &-Revenue {
         border: 2px solid rgba(40, 174, 97, .95);
+      }
+      &-Revenue-Clicked  {
+        border: 2px solid rgba(40, 174, 97, .95);
+        background: rgba(248, 226, 128, .95);
       }
     }
 

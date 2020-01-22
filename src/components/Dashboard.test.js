@@ -13,7 +13,7 @@ describe('Dashboard', () => {
         expect(wrapped.exists('.Dashboard-Controller-SortButtons')).toEqual(true);
         expect(wrapped.find('.Dashboard-Controller-SortButtons').children().length).toEqual(4);
 
-        expect(wrapped.find('.Dashboard-Controller-SortButtons-Name').contains('Name')).toEqual(true);
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Name-Clicked').contains('Name')).toEqual(true);
         expect(wrapped.find('.Dashboard-Controller-SortButtons-Impressions').contains('Impressions')).toEqual(true);
         expect(wrapped.find('.Dashboard-Controller-SortButtons-Conversions').contains('Conversions')).toEqual(true);
         expect(wrapped.find('.Dashboard-Controller-SortButtons-Revenue').contains('Revenue')).toEqual(true);
@@ -41,6 +41,7 @@ describe('Dashboard', () => {
         const retriedClickableName = retriedFirstCard.find('.Card-Profile-Detail-Name');
 
         expect(retriedClickableName.contains('Aaron E. Poynton')).toEqual(true);
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Name-Clicked').contains('Name')).toEqual(true);
     });
 
     it('should sort by impressions', () => {
@@ -50,6 +51,7 @@ describe('Dashboard', () => {
 
         const firstCard = wrapped.find(Card).at(0);
         const clickableImpressions = firstCard.find('.Totals-Impressions');
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Impressions').contains('Impressions')).toEqual(true);
 
         expect(clickableImpressions.contains(887)).toEqual(true);
         clickableImpressions.simulate('click');
@@ -58,6 +60,7 @@ describe('Dashboard', () => {
         const retriedClickableImpressions = retriedFirstCard.find('.Totals-Impressions');
 
         expect(retriedClickableImpressions.contains(838)).toEqual(true);
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Impressions-Clicked').contains('Impressions')).toEqual(true);
     });
 
     it('should sort by conversions', () => {
@@ -67,6 +70,7 @@ describe('Dashboard', () => {
 
         const firstCard = wrapped.find(Card).at(0);
         const clickableConversions = firstCard.find('.Totals-Conversions');
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Conversions').contains('Conversions')).toEqual(true);
 
         expect(clickableConversions.contains(328)).toEqual(true);
         clickableConversions.simulate('click');
@@ -75,6 +79,7 @@ describe('Dashboard', () => {
         const retriedClickableConversions = retriedFirstCard.find('.Totals-Conversions');
 
         expect(retriedClickableConversions.contains(255)).toEqual(true);
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Conversions-Clicked').contains('Conversions')).toEqual(true);
     });
 
     it('should sort by revenue', () => {
@@ -84,6 +89,7 @@ describe('Dashboard', () => {
 
         const firstCard = wrapped.find(Card).at(0);
         const clickableRevenue = firstCard.find('.Totals-Revenue');
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Revenue').contains('Revenue')).toEqual(true);
 
         expect(clickableRevenue.contains('15,665')).toEqual(true);
         clickableRevenue.simulate('click');
@@ -92,5 +98,7 @@ describe('Dashboard', () => {
         const retriedClickableRevenue = retriedFirstCard.find('.Totals-Revenue');
 
         expect(retriedClickableRevenue.contains('12,684')).toEqual(true);
+
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Revenue-Clicked').contains('Revenue')).toEqual(true);
     });
 });

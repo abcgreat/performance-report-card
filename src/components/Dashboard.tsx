@@ -47,24 +47,28 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
                 <div className={'Dashboard-Controller'}>
                     <div className={'Dashboard-Controller-SortButtons'}>
                         <button
-                            className={'Dashboard-Controller-SortButtons-Name'}
+                            className={this.state.sortedBy === 'name' ?
+                                'Dashboard-Controller-SortButtons-Name-Clicked' : 'Dashboard-Controller-SortButtons-Name'}
                             title={'Sort by Name'} onClick={this.onNameClick}>
                             Name
                         </button>
                         <button
-                            className={'Dashboard-Controller-SortButtons-Impressions'}
+                            className={this.state.sortedBy === 'impressions' ?
+                                'Dashboard-Controller-SortButtons-Impressions-Clicked' : 'Dashboard-Controller-SortButtons-Impressions'}
                             title={'Sort by Impressions'}
                             onClick={this.onImpressionsClick}>
                             Impressions
                         </button>
                         <button
-                            className={'Dashboard-Controller-SortButtons-Conversions'}
+                            className={this.state.sortedBy === 'conversions' ?
+                                'Dashboard-Controller-SortButtons-Conversions-Clicked' : 'Dashboard-Controller-SortButtons-Conversions'}
                             title={'Sort by Conversions'}
                             onClick={this.onConversionsClick}>
                             Conversions
                         </button>
                         <button
-                            className={'Dashboard-Controller-SortButtons-Revenue'}
+                            className={this.state.sortedBy === 'revenue' ?
+                                'Dashboard-Controller-SortButtons-Revenue-Clicked' : 'Dashboard-Controller-SortButtons-Revenue'}
                             title={'Sort by Revenue'}
                             onClick={this.onRevenueClick}>
                             Revenue

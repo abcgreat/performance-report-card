@@ -29,6 +29,9 @@ class Totals extends React.Component<TotalsProps> {
                 <div onClick={this.onRevenueClick} className={"Totals-Revenue"} title={'Revenue'}>
                     ${Math.round(this.props.revenue).toLocaleString()}
                 </div>
+                <span className={"Label"}>
+                    revenue
+                </span>
             </div>
         )
     }

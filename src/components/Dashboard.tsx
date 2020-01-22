@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './Dashboard.scss';
 import Card from './Card';
+import toast from "toasted-notes";
+import "toasted-notes/src/styles.css";
 import Users from '../data/users.json';
 import Logs from '../data/logs.json';
 
@@ -73,14 +75,9 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
 
     private optionalMessage() {
         if (this.state.sortedBy !== undefined) {
-            return (
-                <div className={"Dashboard-Message"}>
-                    Sorted by: {this.state.sortedBy}
-                </div>
-            )
+            const sortedBy = this.state.sortedBy.charAt(0).toUpperCase() + this.state.sortedBy.substring(1);
+            toast.notify(`Sorted by: ${sortedBy}`);
         }
-
-        return null;
     }
 
     private getUserLogData(): DashboardState {

@@ -34,6 +34,7 @@ yarn add typescript
 yarn add bizcharts
 yarn add node-sass
 yarn add --dev jest-canvas-mock
+yarn add toasted-notes react-spring
 
 ### `test`
 

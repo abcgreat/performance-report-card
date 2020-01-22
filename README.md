@@ -44,6 +44,7 @@ npm test
 
 control-C to abort on Windows
 npm start
+
 A window will pop up or go to: http://localhost:3000/
 
 Click on buttons on the top to sort. Or, on each card, click on name, impressions, conversions, and revenue on the bottom right corner to sort.

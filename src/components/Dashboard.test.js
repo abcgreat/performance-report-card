@@ -10,11 +10,7 @@ describe('Dashboard', () => {
 
         expect(wrapped.exists('.Dashboard')).toEqual(true);
         expect(wrapped.exists('.Dashboard-Controller')).toEqual(true);
-        expect(wrapped.exists('.Dashboard-Controller-Message')).toEqual(true);
-        expect(wrapped.exists('.Dashboard-Controller-Instruction')).toEqual(true);
         expect(wrapped.exists('.Dashboard-Controller-SortButtons')).toEqual(true);
-
-        expect(wrapped.find('.Dashboard-Controller-Message').length).toEqual(2);
         expect(wrapped.find('.Dashboard-Controller-SortButtons').children().length).toEqual(4);
 
         expect(wrapped.find('.Dashboard-Controller-SortButtons-Name').contains('Name')).toEqual(true);

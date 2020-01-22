@@ -45,15 +45,6 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
         return (
             <div className={'Dashboard'}>
                 <div className={'Dashboard-Controller'}>
-                    <div className={'Dashboard-Controller-Message'}>
-                        Performance Report Card
-                    </div>
-                    <div className={'Dashboard-Controller-Message'}>
-                        Sorted By: {this.FirstCharacterUpperCase(this.state.sortedBy)}
-                    </div>
-                    <span className={'Dashboard-Controller-Instruction'}>
-                        Click to sort
-                    </span>
                     <div className={'Dashboard-Controller-SortButtons'}>
                         <button
                             className={'Dashboard-Controller-SortButtons-Name'}

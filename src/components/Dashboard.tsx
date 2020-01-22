@@ -1,8 +1,6 @@
 import * as React from 'react';
 import './Dashboard.scss';
 import Card from './Card';
-import toast from "toasted-notes";
-import "toasted-notes/src/styles.css";
 import Users from '../data/users.json';
 import Logs from '../data/logs.json';
 
@@ -47,8 +45,6 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
     render() {
         return (
             <div className={"Dashboard"}>
-                {this.optionalMessage()}
-
                 <div className={"Dashboard-Cards"}>
                     {this.state.userLogs.map((usersDetail, index) => {
                             return (
@@ -71,13 +67,6 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
                 </div>
             </div>
         );
-    }
-
-    private optionalMessage() {
-        if (this.state.sortedBy !== undefined) {
-            const sortedBy = this.state.sortedBy.charAt(0).toUpperCase() + this.state.sortedBy.substring(1);
-            toast.notify(`Sorted by: ${sortedBy}`);
-        }
     }
 
     private getUserLogData(): DashboardState {

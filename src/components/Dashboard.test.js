@@ -7,6 +7,20 @@ describe('Dashboard', () => {
     it('should render cards', () => {
         const wrapped = shallow(<Dashboard/>);
         expect(wrapped.exists(Card)).toEqual(true);
+
+        expect(wrapped.exists('.Dashboard')).toEqual(true);
+        expect(wrapped.exists('.Dashboard-Controller')).toEqual(true);
+        expect(wrapped.exists('.Dashboard-Controller-Message')).toEqual(true);
+        expect(wrapped.exists('.Dashboard-Controller-Instruction')).toEqual(true);
+        expect(wrapped.exists('.Dashboard-Controller-SortButtons')).toEqual(true);
+
+        expect(wrapped.find('.Dashboard-Controller-Message').length).toEqual(2);
+        expect(wrapped.find('.Dashboard-Controller-SortButtons').children().length).toEqual(4);
+
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Name').contains('Name')).toEqual(true);
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Impressions').contains('Impressions')).toEqual(true);
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Conversions').contains('Conversions')).toEqual(true);
+        expect(wrapped.find('.Dashboard-Controller-SortButtons-Revenue').contains('Revenue')).toEqual(true);
     });
 
     it('should render list of cards', () => {
@@ -18,11 +32,13 @@ describe('Dashboard', () => {
 
     it('should sort by name', () => {
         const wrapped = mount(<Dashboard/>);
+
         expect(wrapped.find(Card).length > 0).toEqual(true);
+
         const firstCard = wrapped.find(Card).at(0);
         const clickableName = firstCard.find('.Card-Profile-Detail-Name');
 
-        expect(clickableName.contains('Charlie S. Gerardi')).toEqual(true);
+        expect(clickableName.contains('Aaron E. Poynton')).toEqual(true);
         clickableName.simulate('click');
 
         const retriedFirstCard = wrapped.find(Card).at(0);
@@ -33,11 +49,13 @@ describe('Dashboard', () => {
 
     it('should sort by impressions', () => {
         const wrapped = mount(<Dashboard/>);
+
         expect(wrapped.find(Card).length > 0).toEqual(true);
+
         const firstCard = wrapped.find(Card).at(0);
         const clickableImpressions = firstCard.find('.Totals-Impressions');
 
-        expect(clickableImpressions.contains(876)).toEqual(true);
+        expect(clickableImpressions.contains(887)).toEqual(true);
         clickableImpressions.simulate('click');
 
         const retriedFirstCard = wrapped.find(Card).at(0);
@@ -48,11 +66,13 @@ describe('Dashboard', () => {
 
     it('should sort by conversions', () => {
         const wrapped = mount(<Dashboard/>);
+
         expect(wrapped.find(Card).length > 0).toEqual(true);
+
         const firstCard = wrapped.find(Card).at(0);
         const clickableConversions = firstCard.find('.Totals-Conversions');
 
-        expect(clickableConversions.contains(284)).toEqual(true);
+        expect(clickableConversions.contains(328)).toEqual(true);
         clickableConversions.simulate('click');
 
         const retriedFirstCard = wrapped.find(Card).at(0);
@@ -63,11 +83,13 @@ describe('Dashboard', () => {
 
     it('should sort by revenue', () => {
         const wrapped = mount(<Dashboard/>);
+
         expect(wrapped.find(Card).length > 0).toEqual(true);
+
         const firstCard = wrapped.find(Card).at(0);
         const clickableRevenue = firstCard.find('.Totals-Revenue');
 
-        expect(clickableRevenue.contains('14,455')).toEqual(true);
+        expect(clickableRevenue.contains('15,665')).toEqual(true);
         clickableRevenue.simulate('click');
 
         const retriedFirstCard = wrapped.find(Card).at(0);

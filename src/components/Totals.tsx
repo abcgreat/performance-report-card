@@ -12,24 +12,24 @@ export interface TotalsProps {
 class Totals extends React.Component<TotalsProps> {
     render() {
         return (
-            <div className={"Totals"}>
-                <div onClick={this.onImpressionsClick} className={"Totals-Impressions"} title={'Impressions'}>
+            <div className={'Totals'}>
+                <div onClick={this.onImpressionsClick} className={'Totals-Impressions'} title={'Impressions'}>
                     {this.props.impressions}
                 </div>
-                <span className={"Label"}>
+                <span className={'Label'}>
                     impressions
                 </span>
-                <div onClick={this.onConversionsClick} className={"Totals-Conversions"} title={'Conversions'}>
+                <div onClick={this.onConversionsClick} className={'Totals-Conversions'} title={'Conversions'}>
                     {this.props.conversions}
                 </div>
-                <span className={"Label"}>
+                <span className={'Label'}>
                     conversions
                 </span>
 
-                <div onClick={this.onRevenueClick} className={"Totals-Revenue"} title={'Revenue'}>
+                <div onClick={this.onRevenueClick} className={'Totals-Revenue'} title={'Revenue'}>
                     ${Math.round(this.props.revenue).toLocaleString()}
                 </div>
-                <span className={"Label"}>
+                <span className={'Label'}>
                     revenue
                 </span>
             </div>
@@ -53,7 +53,6 @@ class Totals extends React.Component<TotalsProps> {
             this.props.onSortClick('revenue');
         }
     };
-
 }
 
 export default Totals;

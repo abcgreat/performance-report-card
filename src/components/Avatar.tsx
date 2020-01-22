@@ -7,7 +7,6 @@ export interface AvatarProps {
 }
 
 interface AvatarState {
-
 }
 
 class Avatar extends React.Component<AvatarProps, AvatarState> {
@@ -23,12 +22,12 @@ class Avatar extends React.Component<AvatarProps, AvatarState> {
         return (
             <div className={'Avatar'}>
                 <img className={'Avatar-Icon'}
-                    src={avatar}
-                    onError={(ev) => {
-                        this.addDefaultSrc(ev, name.substr(0, 1));
-                    }}
-                    title={name}
-                    alt={name}
+                     src={avatar}
+                     onError={(ev) => {
+                         this.addDefaultSrc(ev, name.substr(0, 1));
+                     }}
+                     title={name}
+                     alt={name}
                 />
             </div>
         )

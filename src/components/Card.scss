@@ -1,60 +1,59 @@
 .Card {
+  display: flex;
+  flex-direction: column;
+  width: 262px;
+  min-height: 164px;
+  border: 5px solid rgba(0, 0, 0, .95);
+  border-radius: .70rem;
+  margin: 16px;
+  background-color: #FFFFFF;
+  padding: 8px;
+
+  &-Profile {
     display: flex;
-    flex-direction: column;
-    width: 262px;
-    min-height: 164px;
-    border: 5px solid rgba(0,0,0,.95);
-    border-radius: .70rem;
-    margin: 16px;
-    background-color: #FFFFFF;
-    padding: 8px;
 
-    &-Profile {
-        display: flex;
-
-        &-Avatar > img {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-        }
-
-        &-NoIcon {
-            overflow: hidden;
-        }
-
-        &-Detail {
-            margin-left: 8px;
-
-            &-Name {
-                flex-wrap: wrap;
-                font-size: 24px;
-                font-weight: 700;
-                color: #2c3e50;
-                line-height: 28px;
-                cursor: pointer;
-            }
-
-            &-Occupation {
-                flex-wrap: wrap;
-                margin-left: 8px;
-                font-size: 16px;
-                font-weight: 500;
-                color: #99a9aa;
-                line-height: 20px;
-            }
-        }
+    &-Avatar > img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
     }
 
-    &-Statistics {
-        display: flex;
-        margin-top: 8px;
-
-        &-Graph {
-            flex: 1;
-        }
-
-        &-Totals {
-
-        }
+    &-NoIcon {
+      overflow: hidden;
     }
+
+    &-Detail {
+      margin-left: 8px;
+
+      &-Name {
+        flex-wrap: wrap;
+        font-size: 24px;
+        font-weight: 700;
+        color: #2c3e50;
+        line-height: 28px;
+        cursor: pointer;
+      }
+
+      &-Occupation {
+        flex-wrap: wrap;
+        margin-left: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #99a9aa;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &-Statistics {
+    display: flex;
+    margin-top: 8px;
+
+    &-Graph {
+      flex: 1;
+    }
+
+    &-Totals {
+    }
+  }
 }

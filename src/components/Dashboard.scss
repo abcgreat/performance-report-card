@@ -1,10 +1,58 @@
 .Dashboard {
-    background-color: #7f8c8d;
+  background-color: #7f8c8d;
 
-    &-Cards {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 8px;
+  &-Controller {
+    width: 300px;
+    margin: 0 auto;
+    border: 5px solid rgba(0, 0, 0, .95);
+    border-radius: .70rem;
+    background-color: #FFFFFF;
+
+    &-Message {
+      display: flex;
+      justify-content: center;
     }
+
+    &-Instruction {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-SortButtons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 8px;
+
+      &-Name {
+        border: 2px solid rgba(0, 0, 0, .95);
+      }
+
+      &-Impressions {
+        border: 2px solid rgba(235, 150, 75, .95);
+      }
+
+      &-Conversions {
+        border: 2px solid rgba(55, 137, 190, .95);
+      }
+
+      &-Revenue {
+        border: 2px solid rgba(40, 174, 97, .95);
+      }
+    }
+
+    &-SortButtons > button {
+      margin: 2px;
+      padding: 2px;
+      border-radius: .30rem;
+      cursor: pointer;
+    }
+  }
+
+  &-Cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 8px;
+  }
 }

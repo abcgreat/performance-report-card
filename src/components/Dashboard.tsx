@@ -5,12 +5,11 @@ import Users from '../data/users.json';
 import Logs from '../data/logs.json';
 
 export interface DashboardProps {
-
 }
 
 export interface DashboardState {
     userLogs: UserLogs[],
-    sortedBy?: string,
+    sortedBy: string,
 }
 
 export interface UserLogs {
@@ -44,8 +43,45 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
 
     render() {
         return (
-            <div className={"Dashboard"}>
-                <div className={"Dashboard-Cards"}>
+            <div className={'Dashboard'}>
+                <div className={'Dashboard-Controller'}>
+                    <div className={'Dashboard-Controller-Message'}>
+                        Performance Report Card
+                    </div>
+                    <div className={'Dashboard-Controller-Message'}>
+                        Sorted By: {this.FirstCharacterUpperCase(this.state.sortedBy)}
+                    </div>
+                    <span className={'Dashboard-Controller-Instruction'}>
+                        Click to sort
+                    </span>
+                    <div className={'Dashboard-Controller-SortButtons'}>
+                        <button
+                            className={'Dashboard-Controller-SortButtons-Name'}
+                            title={'Sort by Name'} onClick={this.onNameClick}>
+                            Name
+                        </button>
+                        <button
+                            className={'Dashboard-Controller-SortButtons-Impressions'}
+                            title={'Sort by Impressions'}
+                            onClick={this.onImpressionsClick}>
+                            Impressions
+                        </button>
+                        <button
+                            className={'Dashboard-Controller-SortButtons-Conversions'}
+                            title={'Sort by Conversions'}
+                            onClick={this.onConversionsClick}>
+                            Conversions
+                        </button>
+                        <button
+                            className={'Dashboard-Controller-SortButtons-Revenue'}
+                            title={'Sort by Revenue'}
+                            onClick={this.onRevenueClick}>
+                            Revenue
+                        </button>
+                    </div>
+                </div>
+
+                <div className={'Dashboard-Cards'}>
                     {this.state.userLogs.map((usersDetail, index) => {
                             return (
                                 <Card
@@ -67,6 +103,10 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
                 </div>
             </div>
         );
+    }
+
+    FirstCharacterUpperCase(str: string): string {
+        return str.charAt(0).toUpperCase() + str.substring(1);
     }
 
     private getUserLogData(): DashboardState {
@@ -141,63 +181,78 @@ class Dashboard extends React.Component<DashboardProps, DashboardState> {
                         trafficDates: dailyCounts,
                         dataRange: `${startDate.getMonth() + 1}/${startDate.getDate()} - ${endDate.getMonth() + 1}/${endDate.getDate()}`,
                     }
-                )
+                );
             }
         );
 
         return {
-            userLogs
+            userLogs:
+                userLogs.sort((a, b) => {
+                    return a.name < b.name ? -1 : 1;
+                }),
+            sortedBy: 'name',
         };
     }
 
-    private SortByFieldName = (sortField?: string): void => {
-        if (sortField !== undefined) {
-            this.setState(
-                {sortedBy: sortField}
-            )
+    private SortByFieldName = (sortField: string): void => {
+        let userLogs: UserLogs[];
 
-            switch (sortField) {
-                case 'name':
-                    this.setState({
-                        userLogs:
-                            this.state.userLogs.sort((a, b) => {
-                                return a.name < b.name ? -1 : 1;
-                            })
+        switch (sortField) {
+            case 'impressions':
+                userLogs =
+                    this.state.userLogs.sort((a, b) => {
+                        return a.impressions - b.impressions;
                     });
-                    break;
+                break;
 
-                case 'impressions':
-                    this.setState({
-                        userLogs:
-                            this.state.userLogs.sort((a, b) => {
-                                return a.impressions - b.impressions;
-                            })
+            case 'conversions':
+                userLogs =
+                    this.state.userLogs.sort((a, b) => {
+                        return a.conversions - b.conversions;
                     });
-                    break;
+                break;
 
-                case 'conversions':
-                    this.setState({
-                        userLogs:
-                            this.state.userLogs.sort((a, b) => {
-                                return a.conversions - b.conversions;
-                            })
+            case 'revenue':
+                userLogs =
+                    this.state.userLogs.sort((a, b) => {
+                        return a.revenue - b.revenue;
                     });
-                    break;
+                break;
 
-                case 'revenue':
-                    this.setState({
-                        userLogs:
-                            this.state.userLogs.sort((a, b) => {
-                                return a.revenue - b.revenue;
-                            })
+            case 'name':
+            default:
+                userLogs =
+                    this.state.userLogs.sort((a, b) => {
+                        return a.name < b.name ? -1 : 1;
                     });
-                    break;
-
-                default:
-                    break;
-            }
+                break;
         }
-    }
+
+        this.setState({
+            userLogs,
+            sortedBy: sortField,
+        });
+    };
+
+    private onNameClick = () => {
+        this.setState({sortedBy: 'name'});
+        this.SortByFieldName('name');
+    };
+
+    private onImpressionsClick = () => {
+        this.setState({sortedBy: 'impressions'});
+        this.SortByFieldName('impressions');
+    };
+
+    private onConversionsClick = () => {
+        this.setState({sortedBy: 'conversions'});
+        this.SortByFieldName('conversions');
+    };
+
+    private onRevenueClick = () => {
+        this.setState({sortedBy: 'revenue'});
+        this.SortByFieldName('revenue');
+    };
 }
 
 export default Dashboard;

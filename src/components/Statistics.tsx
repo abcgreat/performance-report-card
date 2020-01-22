@@ -28,7 +28,7 @@ class Statistics extends React.Component<StatisticsProps> {
                     />
                 </Chart>
 
-                <span className={"Statistics-Legend"}>Conversions {this.props.dataRange}</span>
+                <span className={'Statistics-Legend'}>Conversions {this.props.dataRange}</span>
             </div>
         )
     }

@@ -7,21 +7,21 @@
   &-Impressions {
     font-size: 16px;
     font-weight: 700;
-    color: #eb964b;
+    color: rgba(235, 150, 75, .95);
     cursor: pointer;
   }
 
   &-Conversions {
     font-size: 16px;
     font-weight: 700;
-    color: #3789be;
+    color: rgba(55, 137, 190, .95);
     cursor: pointer;
   }
 
   &-Revenue {
     font-size: 24px;
     font-weight: 900;
-    color: #28ae61;
+    color: rgba(40, 174, 97, .95);
     cursor: pointer;
   }
 }
